@@ -1,0 +1,363 @@
+.app {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	background-color: $lm-zircon;
+	padding: 14.5rem 35.5rem 14.5rem 35.5rem;
+	transition: background-color 300ms ease-in-out;
+
+	@media screen and (max-width: 1300px) {
+		padding: 14.5rem 25rem;
+	}
+
+	@media screen and (max-width: 1100px) {
+		padding: 10rem 18rem;
+	}
+
+	@media screen and (max-width: 785px) {
+		padding: 8rem 10rem;
+	}
+
+	@media screen and (max-width: 625px) {
+		padding: 8rem 2.5rem;
+	}
+
+	@media screen and (max-width: 500px) {
+		padding: 3.2rem 2.4rem;
+	}
+}
+
+.main-container {
+	max-width: 73rem;
+}
+
+// Themes Mode
+
+.navbar {
+	&__logo {
+		transition: color 600ms ease-in-out;
+	}
+
+	@include flex-row;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 3.6rem;
+
+	&--theme-switcher {
+		@include flex-row;
+		align-items: center;
+		cursor: pointer;
+
+		&__theme-text {
+			margin-right: 1.6rem;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		i {
+			font-size: 2rem;
+		}
+
+		.make-it-light {
+			color: #90a4d4;
+
+			i {
+				color: #90a4d4;
+			}
+		}
+
+		.make-it-dark {
+			color: #222731;
+
+			i {
+				color: #90a4d4;
+			}
+		}
+	}
+}
+
+// SearchBar
+
+.search-bar {
+	@include shadow;
+	width: 100%;
+	background-color: $lm-white;
+	@include flex-row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.95rem 1rem 0.95rem 3.2rem;
+	@include radius-medium;
+	transition: color 600ms ease-in-out;
+
+	&--icon {
+		width: 2.4rem;
+
+		@media screen and (max-width: 500px) {
+			font-size: 2rem;
+		}
+	}
+
+	&--form {
+		width: 100%;
+		position: relative;
+	}
+
+	&--input {
+		outline: none;
+		width: 100%;
+		padding: 1rem 2.4rem;
+		font-size: 1.8rem;
+		font-weight: 400;
+		border: none;
+		caret-color: $lm-azure-radiance;
+		line-height: 2.5rem;
+		font-family: inherit;
+		transition: color 600ms ease-in-out;
+
+		@media screen and (max-width: 500px) {
+			font-size: 1.3rem;
+		}
+	}
+
+	&--input-error {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(-2.4rem, -50%);
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: $lm-error;
+
+		@media screen and (max-width: 500px) {
+			font-size: 1.3rem;
+		}
+	}
+
+	&--btn {
+		padding: 1.3rem 2.35rem;
+		background-color: $lm-azure-radiance;
+		@include radius-small;
+		font-size: 1.6rem;
+		font-weight: 700;
+		color: $dm-white;
+		transition: all 0.2s;
+		cursor: pointer;
+		user-select: none;
+
+		@media screen and (max-width: 500px) {
+			font-size: 1.4rem;
+			padding: 1.25rem 1.8rem;
+		}
+
+		&:hover {
+			background-color: #60abff;
+		}
+
+		&:active {
+			transform: scale(0.95);
+		}
+	}
+}
+
+// Styles for Profile card
+
+.card {
+	@include shadow;
+	@include radius-medium;
+	background-color: $lm-white;
+	margin-top: 2.4rem;
+	padding: 4.8rem 4.8rem 2.9rem 4.8rem;
+	transition: color 600ms ease-in-out;
+
+	@include flex-row;
+
+	@media screen and (max-width: 500px) {
+		padding: 3.2rem 2.4rem;
+	}
+
+	&--pp {
+		width: 11.7rem;
+		height: 11.7rem;
+		margin-right: 3.7rem;
+		flex-shrink: 0;
+
+		@media screen and (max-width: 500px) {
+			width: 7rem;
+			margin-right: 2rem;
+		}
+
+		img {
+			width: 100%;
+			border-radius: 50%;
+			object-fit: cover;
+		}
+
+		@media screen and (max-width: 950px) {
+			display: none;
+		}
+	}
+
+	.pp-tablet {
+		display: none;
+
+		@media screen and (max-width: 950px) {
+			display: inline-block;
+		}
+	}
+
+	&--card-data {
+		.user-basic {
+			@include flex-row;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 2rem;
+			width: 100%;
+
+			@media screen and (max-width: 950px) {
+				@include flex-column;
+			}
+		}
+
+		.userdata {
+			@include flex-row;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			@media screen and (max-width: 950px) {
+				justify-content: flex-start;
+			}
+
+			@media screen and (max-width: 500px) {
+				margin-bottom: -1rem;
+			}
+
+			&__user {
+				@media screen and (max-width: 500px) {
+					font-size: 1.6rem !important;
+					line-height: 2rem !important;
+				}
+			}
+
+			&__username {
+				font-weight: 400;
+				color: $lm-azure-radiance;
+				text-transform: lowercase;
+
+				@media screen and (max-width: 500px) {
+					font-size: 1.3rem !important;
+					margin-bottom: -1rem;
+				}
+			}
+
+			&__date {
+				color: $lm-lynch;
+				margin-top: 0.7rem;
+
+				@media screen and (max-width: 500px) {
+					font-size: 1.3rem !important;
+				}
+			}
+		}
+
+		&__bio {
+			margin-bottom: 3.2rem;
+
+			@media screen and (max-width: 500px) {
+				font-size: 1.3rem !important;
+			}
+		}
+
+		&__repo-card {
+			background-color: $lm-zircon;
+			@include radius-small;
+			padding: 1.6rem 8.3rem 1.6rem 3.2rem;
+			@include flex-row;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-bottom: 3.7rem;
+
+			@media screen and (max-width: 820px) {
+				padding: 1.6rem 3.2rem;
+				text-align: center;
+			}
+
+			@media screen and (max-width: 500px) {
+				font-size: 1.1rem;
+				text-align: center;
+			}
+
+			h2 {
+				color: $lm-ebony-clay;
+
+				@media screen and (max-width: 500px) {
+					font-size: 1.6rem;
+				}
+			}
+		}
+
+		&__social {
+			@include flex-row;
+			justify-content: space-between;
+			align-items: flex-start;
+			flex-wrap: wrap;
+			width: 100%;
+
+			.socialicon {
+				color: $lm-kashmir-blue;
+				min-width: 50%;
+				margin-bottom: 1.9rem;
+				@include flex-row;
+				align-items: center;
+
+				@media screen and (max-width: 500px) {
+					font-size: 1.3rem;
+				}
+
+				i {
+					margin-right: 1.6rem;
+					font-size: 2rem;
+					color: black;
+				}
+
+				a {
+					text-decoration: none;
+					color: $lm-kashmir-blue;
+					transition: all 0.2s;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Dark Mode
+
+.app-dark {
+	background-color: $dm-big-stone !important;
+	color: #fff !important;
+}
+
+.logo-dark {
+	color: #fff !important;
+}
+
+.card-dark {
+	background-color: $dm-cloud-burst !important;
+	color: #fff !important;
+}
+
+.input-dark {
+	background-color: $dm-cloud-burst !important;
+	color: #fff !important;
+
+	&::placeholder {
+		color: rgb(165, 165, 165);
+	}
+}
+
+.darkmode-text {
+	color: #fff !important;
+}

@@ -1,0 +1,12 @@
+// Abstract
+@import "./abstract/mixins";
+@import "./abstract/variables";
+
+// Base
+@import "./base/animations";
+@import "./base/base";
+@import "./base/typography";
+
+// Components
+@import "./components/mainContainer";
+// @import "./components/votes";
